@@ -23,11 +23,11 @@ from sklearn.metrics import mean_squared_error
 # Training the model
 
 # Load your dataset
-data = pd.read_csv('AR1-3_input.csv')
+data = pd.read_csv('ar.csv')
 
 # Define your independent variables (features) and dependent variable (target)
-X = data[['Hours_Light', 'Intensity_Light', 'Peak_Light']]
-Y = data['Mood_Score']
+X = data[['total_income', 'save_goal', 'weekly_save']]
+Y = data['prediction']
 
 # Splitting the dataset into training and test sets
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)
@@ -44,11 +44,12 @@ Y_pred = model.predict(X_test)
 
 print("Multiple Linear Regression Model Complete!")
 
+"""
 # Checking how well it worked
 mse = mean_squared_error(Y_test, Y_pred)
 print(f"Mean Squared Error: {mse}")
 
-# I had no idea what MEAN SQUARED meant so this scale might be helpful to you
+
 def interpret_mse(mse):
     if mse < 10:
         return "Excellent model accuracy. This is the SHIZ."
@@ -190,7 +191,7 @@ plt.show()
 import matplotlib.pyplot as plt
 
 # Data: names of the variables and their values
-variable_names = ['Mood if Double Average', 'Mood if Double Peak',]
+variable_names = ['How long would it take to save if I double the amount I save per week', 'Mood if Double Peak',]
 values = [doubleAverageOutcome, doublePeakOutcome]
 
 # Creating the bar chart
@@ -203,3 +204,4 @@ plt.title('Bar Chart of WHAT-IF Q3 Outcome')
 
 # Show the plot
 plt.show()
+"""
