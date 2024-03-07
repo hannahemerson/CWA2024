@@ -44,30 +44,22 @@ Y_pred = model.predict(X_test)
 
 print("Multiple Linear Regression Model Complete!")
 
-"""
+
 # Checking how well it worked
 mse = mean_squared_error(Y_test, Y_pred)
 print(f"Mean Squared Error: {mse}")
 
+income = int(input("Enter your income: "))
+save = int(input("Enter how much you would like to save: "))
+weekly = int(input("Enter how much you will save per week: "))
 
-def interpret_mse(mse):
-    if mse < 10:
-        return "Excellent model accuracy. This is the SHIZ."
-    elif mse < 20:
-        return "Good model accuracy. A fine auld model."
-    elif mse < 30:
-        return "Average model accuracy. That'll do pig."
-    elif mse < 40:
-        return "Below average model accuracy. Don't bet your house on this being true."
-    else:
-        return "Poor model accuracy! Get better data or try another fit like polyfit. This shirt ain't linear. \n"
+# Calculation for prediction
+prediction = save / weekly
+
+print("Prediction:", prediction)
 
 
-mse_remark = interpret_mse(mse)
-print("How good is this model? ", mse_remark)
-
-# Making a prediction using the model
-
+"""
 def predict_mood(hours_of_sunlight, sunlight_intensity, peak_sunlight_intensity):
     df = pd.DataFrame([[hours_of_sunlight, sunlight_intensity, peak_sunlight_intensity]],
                       columns=['Hours_light', 'Intensity_Light', 'Peak_Light'])
