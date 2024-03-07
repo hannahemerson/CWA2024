@@ -60,25 +60,9 @@ print("Prediction:", prediction)
 
 
 """
-def predict_mood(hours_of_sunlight, sunlight_intensity, peak_sunlight_intensity):
-    df = pd.DataFrame([[hours_of_sunlight, sunlight_intensity, peak_sunlight_intensity]],
-                      columns=['Hours_light', 'Intensity_Light', 'Peak_Light'])
-    return model.predict(df)[0]
-
-
-# Let the user enter their own 3 parameters
-print("")
-print("USER CHOOSES 3 LIGHT LEVELS MODE")
-hours = int(input("Enter sunlight hours. Can be any integer from 0-24"))
-sun = float(input("Enter average sunlight intensity. Can be anything from 1-800 "))
-peak = float(input("Enter peak sunlight level. Can be anything from 1-800"))
-
-predicted_mood = predict_mood(hours, sun, peak)  # Example values
-print("\n The Predicted Mood Score for the values entered is", predicted_mood)
-
 
 # WHAT-IF Question 1
-# What is will your mood be with low values of all three parameters?
+# How long will i?
 print("-----------------------------------------------------------")
 print("WHAT-IF QUESTION 1")
 print("Let's test what the mood will be if the sunlight is very low")
